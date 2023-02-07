@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipes</title>
+
+  <link rel="stylesheet" href="list-style.css">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,400;0,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="menuBar d-flex gap10 a-center ">
+  <div><a href="./index.html">ADD RECIPE</a></div>
+  <div><img src="images/recipe-logo.png"></div>
+  <div><a href="./list.html">ALL RECIPES</a></div>
+</div>
+
+<div class="filterTab">
+
+
+</div>
+
+
+<div class="main d-flex gap10 f-column a-top">
+
+  <div class="box filterToolBar">
+     <div class="box3 d-flex gap10 ">
+        <input type="text" placeholder="Title">
+        <input type="number" placeholder="Calories">
+        <input type="text" placeholder="Ingredients">
+        <button id="getPhoto">FILTER</button>
+    </div>
+
+  </div>
+
+  <h1>ALL RECIPES LIST</h1>
+
+    <div class="recipesList d-flex gap30 wrap">
+
+        <div id="boxList" class="box singleRecipe d-flex gap10 f-column a-top">
+            <h3>Title</h3>
+            <img src="https://www.themealdb.com/images/media/meals/wrssvt1511556563.jpg" alt="">
+            <div><b>Calories:</b></div>
+            <div><b>Description:</b></div>
+            <div><b>Ingredients:</b></div>
+        </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

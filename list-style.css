@@ -1,0 +1,158 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: 500;
+}
+body {
+    margin: 30px;
+}
+
+.d-flex {
+    display: flex;
+}
+.f-column {
+    flex-direction: column;
+}
+.gap30 {
+    gap: 30px;
+}
+.gap10 {
+    gap: 10px;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.p50 {
+    padding: 50px;
+}
+
+.j-center {
+    justify-content: center;
+
+}
+.a-center {
+    align-items: center;
+    align-content: center;
+}
+
+
+
+.a-top {
+    align-items: flex-start;
+}
+
+
+.a-bottom {
+    align-items: flex-end;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+.menuBar {
+    justify-content: space-between;
+    height: 130px;
+    background-color: #eee2dc;
+    padding:20px 100px 20px 100px;
+    margin-bottom: 30px;
+}
+
+
+.menuBar img {
+    height: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+b {
+    font-weight: 600;
+}
+
+.box {
+    padding: 20px;
+    border: 2px solid #eee2dc;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.box1 img{
+    height: 200px;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    border: 2px solid #eee2dc;
+}
+
+#txtArea {
+    border: 2px solid #eee2dc;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.filterToolBar {
+    width: 100%;
+}
+
+.box3 {
+    width: 100%;
+    margin: 10px;
+   padding: 10px;
+}
+
+
+
+#get {
+    width: 300px;
+    height: 60px;
+    font-size: 25px;
+}
+
+
+button {
+    width: 400px;
+    height: 30px;
+    background-color: #ee6e09;
+    color: white;
+    border: none;
+}
+
+
+.singleRecipe img {
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+
