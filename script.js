@@ -9,42 +9,6 @@ const btnAddToList = document.getElementById('addToList');
 let imageLink = "";
 let inputsValue = [];
 
-
-btnPreview.onclick = () => {
-    let item = {
-        title: inputs[0].value,
-        ingredient: inputs[1].value,
-        description: inputs[2].value,
-        calories: inputs[3].value,
-        image: imageLink,
-    }
-
-    console.log(item)
-    createPreview()
-}
-
-
-function createPreview() {
-     main.innerHTML = ""
-
-    inputsValue.map(item => {
-
-    main.innerHTML += `
-            <div class="box d-flex gap20">
-                <img src=${item.calories}alt="">
-                <div class="recipeTitle">
-                    <h3>${item.title}</h3>
-                    <div><b>Calories: </b>${item.calories}</div>
-                    <div><b>Description: </b>"${item.description}"</div>
-                    <div><b>Ingredients: </b>"${item.ingredient}"</div>
-                </div>
-            </div>
-            <button id="addToList">ADD RECIPE TO LIST</button>
-       `
-    })
-}
-
-
 btnGetPhoto.onclick = () => {
     function randomImage() {
 
@@ -57,5 +21,52 @@ btnGetPhoto.onclick = () => {
             })
     }
     randomImage()
-
 }
+
+
+btnPreview.onclick = () => {
+    let item = {
+        title: inputs[0].value,
+        ingredient: inputs[1].value,
+        description: inputs[2].value,
+        calories: inputs[3].value,
+        image: imageLink,
+    }
+
+
+    if (inputs[0].value.length === 0 || inputs[3].value.length === 0) {
+        inputs[0].style.border = "2px solid red";
+        inputs[3].style.border = "2px solid red";
+        return
+    } else {
+        inputs[0].style.border = "2px solid #eee2dc;";
+        inputs[3].style.border = "2px solid #eee2dc;";
+    }
+
+    inputsValue.push(item)
+    console.log(inputsValue)
+    createPreview()
+}
+
+
+function createPreview() {
+     main.innerHTML = ""
+
+    inputsValue.map(item => {
+
+    main.innerHTML += `
+            <div class="box d-flex gap20">
+                <img src=${item.image} alt="">
+                <div class="recipeTitle">
+                    <h3>${item.title}</h3>
+                    <div><b>Calories: </b>${item.calories} kcal</div>
+                    <div><b>Description: </b>${item.description}</div>
+                    <div><b>Ingredients: </b>${item.ingredient}</div>
+                </div>
+            </div>
+            <button id="addToList">ADD RECIPE TO LIST</button>
+       `
+    })
+}
+
+
