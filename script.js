@@ -4,10 +4,13 @@ const btnAddIngredient = document.getElementById('addIngredient');
 const btnGetPhoto = document.getElementById('getPhoto');
 const btnPreview = document.getElementById('preview');
 
-const btnAddToList = document.getElementById('addToList');
 
 let imageLink = "";
-let inputsValue = [];
+let inputsRecipe = [];
+let allIngredients = [];
+
+let allRecipes = [];
+let addedRecipes = [];
 
 btnGetPhoto.onclick = () => {
     function randomImage() {
@@ -22,7 +25,17 @@ btnGetPhoto.onclick = () => {
     }
     randomImage()
 }
-
+// 3 Ingradients
+// btnAddIngredient.onclick = () => {
+//     let itemIngr = {
+//         ingredient1: inputs[1].value,
+//         ingredient2: inputs[1].value,
+//         ingredient3: inputs[1].value,
+//     }
+//
+//     allIngredients.push(itemIngr)
+//     console.log(allIngredients)
+//
 
 btnPreview.onclick = () => {
     let item = {
@@ -34,6 +47,7 @@ btnPreview.onclick = () => {
     }
 
 
+
     if (inputs[0].value.length === 0 || inputs[3].value.length === 0) {
         inputs[0].style.border = "2px solid red";
         inputs[3].style.border = "2px solid red";
@@ -43,30 +57,60 @@ btnPreview.onclick = () => {
         inputs[3].style.border = "2px solid #eee2dc;";
     }
 
-    inputsValue.push(item)
-    console.log(inputsValue)
+    inputsRecipe.push(item)
+    console.log(inputsRecipe)
     createPreview()
+
+
+    inputs[0].value = "";
+    inputs[1].value = "";
+    inputs[2].value = "";
+    inputs[3].value = "";
 }
 
 
 function createPreview() {
-     main.innerHTML = ""
+    main.innerHTML = ""
 
-    inputsValue.map(item => {
+    inputsRecipe.map(item => {
 
-    main.innerHTML += `
-            <div class="box d-flex gap20">
-                <img src=${item.image} alt="">
-                <div class="recipeTitle">
-                    <h3>${item.title}</h3>
-                    <div><b>Calories: </b>${item.calories} kcal</div>
-                    <div><b>Description: </b>${item.description}</div>
-                    <div><b>Ingredients: </b>${item.ingredient}</div>
+        main.innerHTML = `
+            <div class="box d-flex gap20 f-column a-top">
+              <div class="d-flex gap20 a-top">        
+                  <img src=${item.image} alt="">
+               
+                  <div class="recipeTitle">
+                       <h3>${item.title}</h3>
+                       <div><b>Calories: </b>${item.calories} kcal</div>
+                       <div>
+                       <b>Ingredients: </b>${item.ingredient}</div>
+                       <div><b>Description: </b>${item.description}</div>   
+                  </div>
+                </div>       
+                <div>
+                                       
+                    <button id="${item.id}" class="add">ADD RECIPE TO LIST</button>
                 </div>
             </div>
-            <button id="addToList">ADD RECIPE TO LIST</button>
+            
+           
        `
+        const btnAddToList = document.querySelectorAll('.add');
+
+
+        //Add recipes
+
+//    btnAddToList.onclick = () => {
+//        addedRecipes.push(myRecipes);
+/////     console.log(addedRecipes)
+////      localStorage.setItem("addedRecipes", JSON.stringify(addedRecipes))
+//     }
+
+
     })
+
 }
+
+
 
 

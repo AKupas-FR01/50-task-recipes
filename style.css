@@ -78,7 +78,7 @@ b {
 }
 
 .box {
-    padding: 20px;
+    padding: 10px;
     border: 2px solid #eee2dc;
 }
 
@@ -89,6 +89,10 @@ h3 {
 
 h2 {
     font-size: 16px;
+}
+
+#boxPreview div {
+    margin-bottom: 5px;
 }
 
 .main img{
