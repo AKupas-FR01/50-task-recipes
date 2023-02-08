@@ -37,6 +37,10 @@ body {
     justify-content: center;
 
 }
+
+.j-space {
+    justify-content: space-between;
+}
 .a-center {
     align-items: center;
 }
@@ -150,3 +154,8 @@ button {
 
 
 
+.warning {
+    padding-top: 20px;
+    color: red;
+}
+s

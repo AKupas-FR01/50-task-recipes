@@ -3,6 +3,7 @@ const inputs = document.querySelectorAll('input');
 const btnAddIngredient = document.getElementById('addIngredient');
 const btnGetPhoto = document.getElementById('getPhoto');
 const btnPreview = document.getElementById('preview');
+const warning = document.querySelector(".warning")
 
 
 let imageLink = "";
@@ -24,17 +25,10 @@ btnGetPhoto.onclick = () => {
     }
     randomImage()
 }
-// 3 Ingredients
-// btnAddIngredient.onclick = () => {
-//     let itemIngr = {
-//         ingredient1: inputs[1].value,
-//         ingredient2: inputs[1].value,
-//         ingredient3: inputs[1].value,
-//     }
-//
-//     allIngredients.push(itemIngr)
-//     console.log(allIngredients)
-//
+
+
+
+
 
 btnPreview.onclick = () => {
     let item = {
@@ -48,9 +42,14 @@ btnPreview.onclick = () => {
     }
 
 
-    if (inputs[0].value.length === 0 || inputs[5].value.length === 0) {
+    if (item.title.length === 0 || item.calories.length === 0) {
         inputs[0].style.border = "2px solid red";
         inputs[5].style.border = "2px solid red";
+        warning.innerHTML += `
+        <div class="warning">
+          <div>The boxes must be filled</div>
+        </div>
+        `
         return
     } else {
         inputs[0].style.border = "2px solid #eee2dc;";
@@ -68,7 +67,7 @@ btnPreview.onclick = () => {
     inputs[3].value = "";
     inputs[4].value = "";
     inputs[5].value = "";
-    inputs[6].value = "";
+
 }
 
 
@@ -102,9 +101,7 @@ function createPreview() {
         const btnAddToList = document.getElementById('add');
 
 
-        //Add recipes
-
-          btnAddToList.onclick = () => {
+           btnAddToList.onclick = () => {
 
                 addedRecipes = inputsRecipe;
                 console.log(addedRecipes)
