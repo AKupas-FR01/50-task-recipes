@@ -147,12 +147,13 @@ button {
     background-color: #ee6e09;
     color: white;
     border: none;
+
 }
 
 
 .singleRecipe img {
     width: 300px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 

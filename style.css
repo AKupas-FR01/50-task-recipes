@@ -14,6 +14,10 @@ body {
 .f-column {
     flex-direction: column;
 }
+.gap30 {
+    gap: 30px;
+}
+
 .gap20 {
     gap: 20px;
 }
@@ -91,6 +95,13 @@ h2 {
     font-size: 16px;
 }
 
+.hr {
+    width: 100%;
+}
+.main {
+
+    width: 600px;
+}
 #boxPreview div {
     margin-bottom: 5px;
 }

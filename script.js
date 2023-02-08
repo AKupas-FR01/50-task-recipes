@@ -9,8 +9,7 @@ let imageLink = "";
 let inputsRecipe = [];
 let allIngredients = [];
 
-let allRecipes = [];
-let addedRecipes = [];
+let addedRecipes = {};
 
 btnGetPhoto.onclick = () => {
     function randomImage() {
@@ -25,7 +24,7 @@ btnGetPhoto.onclick = () => {
     }
     randomImage()
 }
-// 3 Ingradients
+// 3 Ingredients
 // btnAddIngredient.onclick = () => {
 //     let itemIngr = {
 //         ingredient1: inputs[1].value,
@@ -40,32 +39,36 @@ btnGetPhoto.onclick = () => {
 btnPreview.onclick = () => {
     let item = {
         title: inputs[0].value,
-        ingredient: inputs[1].value,
-        description: inputs[2].value,
-        calories: inputs[3].value,
+        ingredient1: inputs[1].value,
+        ingredient2: inputs[2].value,
+        ingredient3: inputs[3].value,
+        description: inputs[4].value,
+        calories: inputs[5].value,
         image: imageLink,
     }
 
 
-
-    if (inputs[0].value.length === 0 || inputs[3].value.length === 0) {
+    if (inputs[0].value.length === 0 || inputs[5].value.length === 0) {
         inputs[0].style.border = "2px solid red";
-        inputs[3].style.border = "2px solid red";
+        inputs[5].style.border = "2px solid red";
         return
     } else {
         inputs[0].style.border = "2px solid #eee2dc;";
-        inputs[3].style.border = "2px solid #eee2dc;";
+        inputs[5].style.border = "2px solid #eee2dc;";
     }
 
     inputsRecipe.push(item)
     console.log(inputsRecipe)
-    createPreview()
 
+    createPreview()
 
     inputs[0].value = "";
     inputs[1].value = "";
     inputs[2].value = "";
     inputs[3].value = "";
+    inputs[4].value = "";
+    inputs[5].value = "";
+    inputs[6].value = "";
 }
 
 
@@ -83,29 +86,30 @@ function createPreview() {
                        <h3>${item.title}</h3>
                        <div><b>Calories: </b>${item.calories} kcal</div>
                        <div>
-                       <b>Ingredients: </b>${item.ingredient}</div>
+                       <b>Ingredients: </b>${item.ingredient1}, ${item.ingredient2}, ${item.ingredient3}</div>
+                       <hr />
                        <div><b>Description: </b>${item.description}</div>   
                   </div>
                 </div>       
                 <div>
                                        
-                    <button id="${item.id}" class="add">ADD RECIPE TO LIST</button>
+                    <button id="add">ADD RECIPE TO LIST</button>
                 </div>
             </div>
             
            
        `
-        const btnAddToList = document.querySelectorAll('.add');
+        const btnAddToList = document.getElementById('add');
 
 
         //Add recipes
 
-//    btnAddToList.onclick = () => {
-//        addedRecipes.push(myRecipes);
-/////     console.log(addedRecipes)
-////      localStorage.setItem("addedRecipes", JSON.stringify(addedRecipes))
-//     }
+          btnAddToList.onclick = () => {
 
+                addedRecipes = inputsRecipe;
+                console.log(addedRecipes)
+                localStorage.setItem("addedRecipes", JSON.stringify(addedRecipes))
+          }
 
     })
 
